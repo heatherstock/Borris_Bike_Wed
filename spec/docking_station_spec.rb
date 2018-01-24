@@ -23,4 +23,8 @@ describe DockingStation do
       expect{subject.release_bike}.to raise_error(StandardError)
     end
 
+    it "returns error if docking station is full" do
+      @bike != nil
+      expect{subject.dock_bike(bike)}.to raise_error(StandardError)
+    end
 end
