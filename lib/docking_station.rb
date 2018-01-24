@@ -1,9 +1,15 @@
 class DockingStation
-  def release_bike
-    Bike.new
-  end
+    attr_reader :bike
+
   def dock_bike(bike)
     @bike = bike
   end
-  attr_reader :bike
+
+  def release_bike
+    if @bike == nil 
+      raise StandardError.new("No bikes available")
+    else
+      Bike.new
+    end
+  end
 end
