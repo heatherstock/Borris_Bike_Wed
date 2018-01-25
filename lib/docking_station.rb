@@ -11,7 +11,7 @@ class DockingStation
 
   def release_bike
     if @bike == nil
-      raise StandardError.new("No bikes available")
+      raise "No bikes available"
     else
       Bike.new
     end
